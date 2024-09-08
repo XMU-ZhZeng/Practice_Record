@@ -14,6 +14,7 @@ void init(HPI *hpi)
 {
     hpi->data = (char *)malloc(sizeof(char) * MAX);
     memset(hpi->data, 0, sizeof(char) * MAX);
+    hpi->length = 0;
 }
 
 void input(HPI *hpi)
