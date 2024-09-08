@@ -56,8 +56,10 @@ int main()
     init(&hpi3);
     input(&hpi1);
     input(&hpi2);
+
     add(&hpi1, &hpi2, &hpi3);
     print(&hpi3);
+    
     destroy(&hpi1);
     destroy(&hpi2);
     destroy(&hpi3);
