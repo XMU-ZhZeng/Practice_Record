@@ -13,7 +13,7 @@ void init(HPI *hpi)
 {
     hpi->data = (char *)malloc(sizeof(char) * MAX);
     memset(hpi->data, 0, sizeof(char) * MAX);
-    hpi->length = 0;
+    hpi->length = 1;
 }
 
 void input(HPI *hpi)
@@ -47,8 +47,9 @@ int compare(const HPI *hpi1, const HPI *hpi2)
 
 void clear(HPI *hpi)
 {
+    if (hpi->length == 1 && hpi->data[0] == 0) return;
     memset(hpi->data, 0, sizeof(char) * MAX);
-    hpi->length = 0;
+    hpi->length = 1;
 }
 
 void sub(const HPI *hpi1, const HPI *hpi2, HPI *hpi3) // 仅大减小，hpi1 > hpi2

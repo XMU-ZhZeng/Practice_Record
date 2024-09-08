@@ -13,7 +13,7 @@ void init(HPI *hpi)
 {
     hpi->data = (char *)malloc(sizeof(char) * MAX);
     memset(hpi->data, 0, sizeof(char) * MAX);
-    hpi->length = 0;
+    hpi->length = 1;
 }
 
 void input(HPI *hpi)
@@ -35,8 +35,9 @@ void print(const HPI *hpi){for (int i = hpi->length - 1; i >= 0; i--) printf("%d
 
 void clear(HPI *hpi)
 {
+    if (hpi->length == 1 && hpi->data[0] == 0) return;
     memset(hpi->data, 0, sizeof(char) * MAX);
-    hpi->length = 0;
+    hpi->length = 1;
 }
 
 void multi(const HPI *hpi1, const HPI *hpi2, HPI *hpi3)
