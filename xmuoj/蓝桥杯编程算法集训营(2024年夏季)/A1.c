@@ -31,7 +31,7 @@ void input(HPI *hpi)
 
 void destroy(HPI *hpi){free(hpi->data);}
 
-void add(HPI *hpi1, HPI *hpi2, HPI *hpi3)
+void add(const HPI *hpi1, const HPI *hpi2, HPI *hpi3)
 {
     int carry = 0;
     int len = hpi1->length > hpi2->length? hpi1->length : hpi2->length;
@@ -45,7 +45,7 @@ void add(HPI *hpi1, HPI *hpi2, HPI *hpi3)
     hpi3->length = len;
 }
 
-void print(HPI *hpi){for (int i = hpi->length - 1; i >= 0; i--) printf("%d", hpi->data[i]);}
+void print(const HPI *hpi){for (int i = hpi->length - 1; i >= 0; i--) printf("%d", hpi->data[i]);}
 
 int main()
 {
