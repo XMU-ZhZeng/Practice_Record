@@ -45,9 +45,15 @@ int compare(const HPI *hpi1, const HPI *hpi2)
     return 0;
 }
 
+void clear(HPI *hpi)
+{
+    memset(hpi->data, 0, sizeof(char) * MAX);
+    hpi->length = 0;
+}
 
 void sub(const HPI *hpi1, const HPI *hpi2, HPI *hpi3) // 仅大减小，hpi1 > hpi2
 {
+    clear(hpi3);
     int len = hpi1->length;
     int borrow = 0;
     for (int i = 0; i < len; i++)

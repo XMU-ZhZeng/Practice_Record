@@ -32,8 +32,15 @@ void input(HPI *hpi)
 
 void destroy(HPI *hpi){free(hpi->data);}
 
+void clear(HPI *hpi)
+{
+    memset(hpi->data, 0, sizeof(char) * MAX);
+    hpi->length = 0;
+}
+
 void add(const HPI *hpi1, const HPI *hpi2, HPI *hpi3)
 {
+    clear(hpi3);
     int carry = 0;
     int len = hpi1->length > hpi2->length? hpi1->length : hpi2->length;
     for (int i = 0; i < len; i++)
@@ -59,7 +66,7 @@ int main()
 
     add(&hpi1, &hpi2, &hpi3);
     print(&hpi3);
-    
+
     destroy(&hpi1);
     destroy(&hpi2);
     destroy(&hpi3);
