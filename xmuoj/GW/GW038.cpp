@@ -1,0 +1,1 @@
+int bitManipulation2(int n, int i) { return (n & ~(1 << i)) | ((1 << i) & ~n);}
