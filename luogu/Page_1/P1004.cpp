@@ -12,9 +12,9 @@ int main()
 
     for (int i = 1; i <= N; i++)
         for (int j = 1; j <= N; j++)
-            for (int k = 1; k <= N; k++)
-                for (int q = 1; q <= N; q++)
+            for (int k = 1; k <= i + j - 1; k++)
                 {
+                    int q = i + j - k;
                     dp[i][j][k][q] = max(max(dp[i-1][j][k-1][q], dp[i-1][j][k][q-1]), max(dp[i][j-1][k-1][q], dp[i][j-1][k][q-1])) + matrix[i][j] + matrix[k][q];
                     if (i == k && j == q) dp[i][j][k][q] -= matrix[i][j];
                 }
