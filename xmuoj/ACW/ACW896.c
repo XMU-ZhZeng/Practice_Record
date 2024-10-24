@@ -27,10 +27,7 @@ int main()
     {
         scanf("%d", &d[len]);
         if (d[len] > d[len - 1]) len++;
-        else
-        {
-            d[binarySearch(d, len, d[len])] = d[len];
-        }
+        else d[binarySearch(d, len, d[len])] = d[len];
     }
 
     printf("%d", len);
