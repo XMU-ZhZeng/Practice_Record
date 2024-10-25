@@ -14,7 +14,7 @@ int main()
 
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= n; j++)
-            for (int k = 1; k <= i + j - 1; k++)
+            for (int k = 1; (k <= i + j - 1) && (k <= n); k++)
             {
                 if (i + j - k > n) continue;
                 dp[i][j][k][i + j - k] = max(max(dp[i - 1][j][k - 1][i + j - k], dp[i - 1][j][k][i + j - k - 1]),
