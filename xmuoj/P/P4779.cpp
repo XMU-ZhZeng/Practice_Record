@@ -12,12 +12,13 @@ int n, m;
 
 void dijkstra()
 {
-    queue<int> q;
+    
+    priority_queue<int> q;
     q.push(1);
 
     while (q.size())
     {   
-        int t = q.front();
+        int t = q.top();
         vector<PII>& vt = graph[t];
         q.pop();
 
