@@ -6,7 +6,7 @@ using namespace std;
 int v, n;
 int vs[35];
 int dp[35][20010] = { 0 };
-int visited[35][20010] = { 0 };
+bool visited[35][20010] = { 0 };
 
 int DP(int idx, int volume)
 {
