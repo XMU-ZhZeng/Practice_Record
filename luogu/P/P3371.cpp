@@ -22,7 +22,7 @@ void Dijkstra(vector<vector<pair<int, int>>> graph)
     priority_queue<node> pq;
     pq.push(node{s, 0});
     
-    for (int i = 0; (i < n - 1) && pq.size(); i++)
+    for (int i = 0; i < n - 1 && pq.size(); i++)
     {
         int u = pq.top().id;
         pq.pop();
@@ -37,7 +37,7 @@ void Dijkstra(vector<vector<pair<int, int>>> graph)
                 pq.push(node{v, dist[v]});
             }
         }
-        while (visited[pq.top().id] && pq.size()) pq.pop();
+        while (pq.size() && visited[pq.top().id]) pq.pop();
         if (pq.size()) visited[pq.top().id] = 1;
     }
 
